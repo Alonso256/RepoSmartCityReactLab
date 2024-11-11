@@ -3,12 +3,17 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Mybutton from './Mybutton'
+import Layout from './app/Layout'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
+    <Layout>
+      <h1>My App</h1>
+      <p>Some content</p>
+    </Layout>
       <div>
         <Mybutton />
         <a href="https://vite.dev" target="_blank">
