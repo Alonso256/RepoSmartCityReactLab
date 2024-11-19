@@ -5,14 +5,13 @@ import './App.css'
 import Mybutton from './Mybutton'
 import Layout from './app/Layout'
 import Mycard from './Mycard'
-import { Mychart } from './Mychart'
 
 function App() {
 
   return (
     <>
        <Mybutton/>
-      <Mychart/>
+     
     </>
   )
 }
