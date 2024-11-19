@@ -5,13 +5,36 @@ import './App.css'
 import Mybutton from './Mybutton'
 import Layout from './app/Layout'
 import Mycard from './Mycard'
+import Card from './MenuCard'
+import CardGrid from './CardGrid'
+import Switch from './BtnSwitch'
+import Button from './Btn'
+import Tooltip from './User'
+import Loader from './Loader'
+import ButtonRound from './BtnRound'
+import Input from './Input'
+import Form from './Form'
+
 
 function App() {
 
   return (
     <>
-       <Mybutton/>
-     
+
+      <Switch/>
+
+      <Button/>
+
+      <Tooltip/>
+
+      <Loader/>
+
+      <ButtonRound/>
+
+      <Input/>
+
+      <Form/>
+
     </>
   )
 }
