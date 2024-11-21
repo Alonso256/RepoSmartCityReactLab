@@ -19,8 +19,8 @@ import StyledCard from './StyledCard'
 import { Bar, BarChart, CartesianGrid, XAxis } from "recharts"
 import { ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 import { ChartLegend, ChartLegendContent } from "@/components/ui/chart"
-
 import { ChartContainer } from "@/components/ui/chart"
+import Header from './Header'
 
 const chartConfig = {
   desktop: {
@@ -40,7 +40,6 @@ const chartData = [
   { month: "May", desktop: 209, mobile: 130 },
   { month: "June", desktop: 214, mobile: 140 },
 ]
-import Header from './Header'
 
 function App() {
 
