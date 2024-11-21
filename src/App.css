@@ -5,6 +5,35 @@
   padding: 2rem;
   text-align: center;
 }
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0; /* Espacio entre filas */
+}
+
+.col {
+  flex: 1;
+  padding: 10px;
+}
+
+/* Asegurarnos que solo haya 2 columnas en la primera fila y 3 en la segunda */
+.row:first-child .col {
+  flex-basis: calc(33.33% - 20px); /* Tres columnas ocupan un tercio del ancho */
+}
+
+.row:nth-child(2) .col {
+  flex-basis: calc(50% - 20px); /* Dos columnas ocupan la mitad del ancho */
+}
 
 .logo {
   height: 6em;

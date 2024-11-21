@@ -9,7 +9,6 @@ const THEMES = {
   dark: ".dark"
 }
 
- 
 const ChartContext = React.createContext(null)
 
 function useChart() {

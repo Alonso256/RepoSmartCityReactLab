@@ -1,0 +1,88 @@
+/* Contenedor general del gráfico */
+.chart-container {
+    display: flex;
+    aspect-ratio: 16 / 9;
+    justify-content: center;
+    text-align: center;
+    font-size: 12px;
+  }
+  
+  /* Ejes de los gráficos */
+  .recharts-cartesian-axis-tick text {
+    fill: var(--muted-foreground, #666);
+  }
+  
+  .recharts-cartesian-grid line {
+    stroke: var(--border, #ccc);
+    opacity: 0.5;
+  }
+  
+  .recharts-curve.recharts-tooltip-cursor {
+    stroke: var(--border, #ccc);
+  }
+  
+  .recharts-dot {
+    stroke: transparent;
+  }
+  
+  .recharts-layer,
+  .recharts-surface {
+    outline: none;
+  }
+  
+  .recharts-sector {
+    outline: none;
+    stroke: transparent;
+  }
+  
+  .recharts-radial-bar-background-sector {
+    fill: var(--muted, #e0e0e0);
+  }
+  
+  .recharts-rectangle.recharts-tooltip-cursor {
+    fill: var(--muted, #e0e0e0);
+  }
+  
+  .recharts-reference-line {
+    stroke: var(--border, #ccc);
+  }
+  
+  /* Tooltip personalizado */
+  .chart-tooltip {
+    display: grid;
+    min-width: 8rem;
+    gap: 1.5px;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--background, #ffffff);
+    color: var(--foreground, #000);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .chart-tooltip .tooltip-label {
+    font-weight: bold;
+  }
+  
+  /* Leyenda personalizada */
+  .chart-legend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    padding-top: 5px;
+  }
+  
+  .chart-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .chart-legend-icon {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  

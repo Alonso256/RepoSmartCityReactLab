@@ -22,7 +22,7 @@ const StyledWrapper = styled.div`
     aspect-ratio: 1;
     border-radius: 50%;
     background: radial-gradient(farthest-side,#000 95%,#0000) 35% 35%/6px 6px no-repeat
-      #fff;
+      #eee;
     transform: scaleX(var(--s,1)) rotate(0deg);
     animation: l6 1s infinite linear;
   }
