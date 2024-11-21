@@ -40,12 +40,13 @@ const chartData = [
   { month: "May", desktop: 209, mobile: 130 },
   { month: "June", desktop: 214, mobile: 140 },
 ]
-
+import Header from './Header'
 
 function App() {
 
   return (
     <>
+      <Header/>
       <div className="container text-center">
         <div className="row">
           <div className="col">
