@@ -14,26 +14,15 @@ import Loader from './Loader'
 import ButtonRound from './BtnRound'
 import Input from './Input'
 import Form from './Form'
-
+import Header from './Header'
 
 function App() {
 
   return (
     <>
 
-      <Switch/>
+    <Header/>
 
-      <Button/>
-
-      <Tooltip/>
-
-      <Loader/>
-
-      <ButtonRound/>
-
-      <Input/>
-
-      <Form/>
 
     </>
   )
