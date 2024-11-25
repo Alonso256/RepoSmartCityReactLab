@@ -38,14 +38,6 @@ const StyledWrapper = styled.div`
     justify-content: center;
   }
 
-  .status-ind {
-    width: 0.625em;
-    height: 0.625em;
-    background-color: #ff0000;
-    margin: 0.375em 0;
-    border-radius: 0.5em;
-  }
-
   .text-wrap {
     display: flex;
     flex-direction: column;
@@ -53,23 +45,6 @@ const StyledWrapper = styled.div`
     color: #333;
   }
 
-  .time {
-    font-size: 0.875em;
-    color: #777;
-  }
-
-  .text-link {
-    font-weight: 500;
-    text-decoration: none;
-    color: black;
-  }
-
-  .button-wrap {
-    display: flex;
-    flex-direction: row;
-    gap: 1em;
-    align-items: center;
-  }
 
   .secondary-cta {
     background-color: transparent;
@@ -90,9 +65,6 @@ const StyledWrapper = styled.div`
     cursor: pointer;
   }
 
-  button:hover {
-    text-decoration: underline;
-  }
 
   .right {
     display: flex;
