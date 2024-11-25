@@ -6,11 +6,11 @@
   text-align: center;
 }
 .container {
+  display: grid;
+  gap: 1rem;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 1rem;
 }
-
 .text-center {
   text-align: center;
 }
@@ -18,12 +18,18 @@
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin: 20px 0; /* Espacio entre filas */
+  gap: 1rem;
+  width: 100%;
 }
 
-.col {
-  flex: 1;
-  padding: 10px;
+.col-4 {
+  flex: 0 0 calc(33.333% - 1rem);
+  max-width: calc(33.333% - 1rem);
+}
+
+.col-6 {
+  flex: 0 0 calc(50% - 1rem);
+  max-width: calc(50% - 1rem);
 }
 
 /* Asegurarnos que solo haya 2 columnas en la primera fila y 3 en la segunda */
@@ -48,18 +54,10 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+@media (max-width: 768px) {
+  .col-4, .col-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
   }
 }
 

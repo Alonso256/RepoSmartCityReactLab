@@ -1,66 +1,108 @@
-import * as React from "react"
-import { useState } from "react"
-import { useEffect } from "react"
-import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
+import React from 'react';
+import styled from 'styled-components';
 
-export default function Mycard() {
-    const [movie, setMovie] = useState("")
-    useEffect(() => {
-        fetch("http://localhost:5000/movies/67336ee61e72e6168a994684")
-            .then((response) => response.json())
-            .then((movie) => setMovie(movie))
-        }, [])
+const Card = ({ children }) => {
   return (
-    <Card className="w-[350px]">
-      <CardHeader>
-        <CardTitle>Create project</CardTitle>
-        <CardDescription></CardDescription>
-      </CardHeader>
-      <CardContent>
-        <form>
-          <div className="grid w-full items-center gap-4">
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="name">{movie.director},{movie.title}</Label>
-              <Input id="name" placeholder="Name of your project" />
-            </div>
-            <div className="flex flex-col space-y-1.5">
-              <Label htmlFor="framework">Framework</Label>
-              <Select>
-                <SelectTrigger id="framework">
-                  <SelectValue placeholder="Select" />
-                </SelectTrigger>
-                <SelectContent position="popper">
-                  <SelectItem value="next">Next.js</SelectItem>
-                  <SelectItem value="sveltekit">SvelteKit</SelectItem>
-                  <SelectItem value="astro">Astro</SelectItem>
-                  <SelectItem value="nuxt">Nuxt.js</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-          </div>
-        </form>
-      </CardContent>
-      <CardFooter className="flex justify-between">
-        <Button variant="outline">Cancel</Button>
-        <Button>Deploy</Button>
-      </CardFooter>
-    </Card>
-  )
+    <StyledWrapper>
+      <div className="card">
+        <div className="container">
+        {children}
+        </div>
+      </div>
+    </StyledWrapper>
+  );
 }
+
+const StyledWrapper = styled.div`
+  .card {
+    width: 100%;
+    background-color: #f2f3f7;
+    border-radius: 0.75em;
+    cursor: pointer;
+    transition: ease 0.2s;
+    box-shadow: 1em 1em 1em #d8dae0b1, -0.75em -0.75em 1em #ffffff;
+    border: 1.5px solid #f2f3f7;
+  }
+
+  .card:hover {
+    background-color: #e3e6ea;
+    border: 1.5px solid #1677ff;
+  }
+
+   .container {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .status-ind {
+    width: 0.625em;
+    height: 0.625em;
+    background-color: #ff0000;
+    margin: 0.375em 0;
+    border-radius: 0.5em;
+  }
+
+  .text-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25em;
+    color: #333;
+  }
+
+  .time {
+    font-size: 0.875em;
+    color: #777;
+  }
+
+  .text-link {
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+  }
+
+  .button-wrap {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+    align-items: center;
+  }
+
+  .secondary-cta {
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+    font-weight: 400;
+    color: #666;
+    cursor: pointer;
+  }
+
+  .primary-cta {
+    font-size: 15px;
+    background-color: transparent;
+    font-weight: 600;
+    color: #1677ff;
+    border: none;
+    border-radius: 1.5em;
+    cursor: pointer;
+  }
+
+  button:hover {
+    text-decoration: underline;
+  }
+
+  .right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875em;
+  }
+    @media (max-width: 768px) {
+    .card {
+      padding: 1rem;
+    }
+  }`;
+
+export default Card;
