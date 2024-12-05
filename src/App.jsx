@@ -6,9 +6,17 @@ import './App.css'
 import { CardBolt } from './CardBolt';
 import { ChartGridBolt } from './ChartGridBolt';
 import { ChartRowBolt } from './ChartRowBolt';
+import Heatmap from "./Heatmap";
 import { BarChart } from './components/ui/charts/BarChart';
 import { AreaChart } from './components/ui/charts/AreaChart';
 
+
+const heatData = [
+  [40.712776, -74.005974, 1], // Lat, Long, Intensidad
+  [40.713776, -74.002974, 0.2],
+  [40.711776, -74.007974, 0.4],
+  [40.715776, -74.001974, 0.8]
+];
 
 function App() {
 
