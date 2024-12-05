@@ -6,7 +6,6 @@ import './App.css'
 import { CardBolt } from './CardBolt';
 import { ChartGridBolt } from './ChartGridBolt';
 import { ChartRowBolt } from './ChartRowBolt';
-import Heatmap from "./Heatmap";
 import { BarChart } from './components/ui/charts/BarChart';
 import { AreaChart } from './components/ui/charts/AreaChart';
 
