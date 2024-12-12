@@ -14,9 +14,17 @@ const chartConfig = {
     color: "#60a5fa",
   },
 }
+export const chartData = [
+  { distrito: "January", EspanolesHombres: 186, EspanolesMujeres: 80 },
+  { distrito: "February", EspanolesHombres: 305, EspanolesMujeres: 200 },
+  { distrito: "March", EspanolesHombres: 237, EspanolesMujeres: 120 },
+  { distrito: "April", EspanolesHombres: 73, EspanolesMujeres: 190 },
+  { distrito: "May", EspanolesHombres: 209, EspanolesMujeres: 130 },
+  { distrito: "June", EspanolesHombres: 214, EspanolesMujeres: 140 },
+];
 
 export function AreaChart() {
-  const [chartData, setChartData] = useState([]);
+ /* const [chartData, setChartData] = useState([]);
   const [offset, setOffset] = useState(0); // Offset inicial
   const [loading, setLoading] = useState(false); // Para manejar el estado de carga
   useEffect(() => {
@@ -24,7 +32,7 @@ export function AreaChart() {
       try {
         //const response = await fetch("http://localhost:5000/censos/estadisticas?limit=100");
 
-        const response = await fetch("http://localhost:5000/censos/?limit=50");
+        //const response = await fetch("http://localhost:5000/censos/?limit=50");
         //const response = await fetch("http://localhost:5000/censos");
         const reader = response.body.getReader();
         const decoder = new TextDecoder("utf-8");
@@ -68,7 +76,7 @@ export function AreaChart() {
     };
 
     fetchStream();
-  }, []);
+  }, []);*/
 
   return (
     <ChartContainer config={chartConfig} title="Device Usage Trends">

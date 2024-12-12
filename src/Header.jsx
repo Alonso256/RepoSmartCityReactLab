@@ -42,7 +42,13 @@ position: fixed; /* Fija el header en la parte superior */
   z-index: 1000; /* Asegura que esté sobre otros elementos */
   background-color: white; /* Define un fondo para visibilidad */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra sutil */
-  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb; /* Borde inferior */
+  display: flex; /* Layout flexbox */
+  align-items: center; /* Alinea elementos verticalmente al centro */
+  gap: 0.5rem; /* Espaciado entre elementos */
+  height: 4rem; /* Altura fija (h-16 equivale a 4rem) */
+  flex-shrink: 0; /* Evita que el header se reduzca */
+  padding: 0 1rem; /* Espaciado interno horizontal (px-4 equivale a 1rem) */
 
   .e-card {
     display: flex;
@@ -63,4 +69,8 @@ position: fixed; /* Fija el header en la parte superior */
   }
 `;
 
-export default Header;
+const ContentWrapper = styled.div`
+  margin-top: 4rem; /* Ajusta este valor según la altura del header */
+`;
+
+export { Header, ContentWrapper };

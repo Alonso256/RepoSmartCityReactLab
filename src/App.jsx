@@ -8,6 +8,7 @@ import { ChartGridBolt } from './ChartGridBolt';
 import { ChartRowBolt } from './ChartRowBolt';
 import { BarChart } from './components/ui/charts/BarChart';
 import { AreaChart } from './components/ui/charts/AreaChart';
+import { Layout } from './app/Layout';
 
 
 const heatData = [
@@ -21,6 +22,7 @@ function App() {
 
   return (
     <>
+    <Layout>
       <div className="min-h-screen bg-gray-100 p-4 sm:p-6 lg:p-8">
       <ChartGridBolt>
         <ChartRowBolt columns={3}>
@@ -45,7 +47,7 @@ function App() {
         </ChartRowBolt>
       </ChartGridBolt>
     </div>
-
+    </Layout>
     </>
   )
 }
