@@ -1,17 +1,50 @@
 import { useState, useEffect } from 'react';
 import { Bar, BarChart as RechartsBarChart, CartesianGrid, XAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { ChartContainer } from './ChartContainer';
+import Loader from '../../../Loader';
 
-export const chartData = [
-  { distrito: "January", EspanolesHombres: 186, EspanolesMujeres: 80 },
-  { distrito: "February", EspanolesHombres: 305, EspanolesMujeres: 200 },
-  { distrito: "March", EspanolesHombres: 237, EspanolesMujeres: 120 },
-  { distrito: "April", EspanolesHombres: 73, EspanolesMujeres: 190 },
-  { distrito: "May", EspanolesHombres: 209, EspanolesMujeres: 130 },
-  { distrito: "June", EspanolesHombres: 214, EspanolesMujeres: 140 },
-];
+const chartConfig = {
+  felicidad: {
+    label: "Felicidad",
+    color: "#2563eb",
+  },
+  tristeza: {
+    label: "Tristeza",
+    color: "#60a5fa",
+  },
+}
 
 export function BarChart() {
+  const [chartData, setChartData] = useState("");
+  const [loading, setLoading] = useState(true); // Estado de carga
+
+  useEffect(() => {
+    setLoading(true); // Comienza la carga
+    fetch("http://localhost:5000/felicidad_tristeza")
+      .then((response) => response.json())
+      .then((data) => {
+        // Formatear el objeto directamente
+        const formattedData = data.map((item) => ({
+          distrito: item.barrio,
+          felicidad: item.felicidad,
+          tristeza: item.tristeza,
+        }));
+        setChartData(formattedData);
+        setLoading(false); // Finaliza la carga
+      })
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+        setLoading(false); // Finaliza la carga incluso si hay un error
+      });
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="loading-container">
+        <Loader/>
+      </div>
+    );
+  }
 
   return (
     <ChartContainer title="Estadísticas por Distrito">
@@ -27,8 +60,16 @@ export function BarChart() {
           />
           <Tooltip />
           <Legend />
-          <Bar dataKey="EspanolesHombres" fill="#2563eb" radius={4} name="Hombres" />
-          <Bar dataKey="EspanolesMujeres" fill="#60a5fa" radius={4} name="Mujeres" />
+          <Bar 
+          dataKey="felicidad" 
+          fill={chartConfig.felicidad.color} 
+          radius={4} 
+          name={chartConfig.felicidad.label} />
+          <Bar 
+          dataKey="tristeza" 
+          fill={chartConfig.tristeza.color}
+            radius={4}
+            name={chartConfig.tristeza.label} />
         </RechartsBarChart>
       </ResponsiveContainer>
     </ChartContainer>

@@ -11,13 +11,6 @@ import { AreaChart } from './components/ui/charts/AreaChart';
 import { Layout } from './app/Layout';
 
 
-const heatData = [
-  [40.712776, -74.005974, 1], // Lat, Long, Intensidad
-  [40.713776, -74.002974, 0.2],
-  [40.711776, -74.007974, 0.4],
-  [40.715776, -74.001974, 0.8]
-];
-
 function App() {
 
   return (
@@ -27,22 +20,22 @@ function App() {
       <ChartGridBolt>
         <ChartRowBolt columns={3}>
           <CardBolt>
-            <AreaChart />
+          
           </CardBolt>
           <CardBolt>
-            <BarChart />
+            
           </CardBolt>
           <CardBolt>
-            <BarChart />
+            
           </CardBolt>
         </ChartRowBolt>
         
         <ChartRowBolt columns={2}>
           <CardBolt>
-            <BarChart />
+            
           </CardBolt>
           <CardBolt>
-            <BarChart />
+          <BarChart />
           </CardBolt>
         </ChartRowBolt>
       </ChartGridBolt>
