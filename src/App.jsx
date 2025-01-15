@@ -9,7 +9,7 @@ import { ChartRowBolt } from './ChartRowBolt';
 import { BarChart } from './components/ui/charts/BarChart';
 import { AreaChart } from './components/ui/charts/AreaChart';
 import { Layout } from './app/Layout';
-
+import { MapaContenedores } from './components/ui/charts/MapaContenedores';
 
 function App() {
 
@@ -32,7 +32,7 @@ function App() {
         
         <ChartRowBolt columns={2}>
           <CardBolt>
-            
+            <MapaContenedores />
           </CardBolt>
           <CardBolt>
           <BarChart />
