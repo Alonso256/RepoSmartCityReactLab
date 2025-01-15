@@ -31,7 +31,7 @@ function App() {
         </ChartRowBolt>
         
         <ChartRowBolt columns={2}>
-          <CardBolt>
+          <CardBolt className="card-bolt">
             <MapaContenedores />
           </CardBolt>
           <CardBolt>

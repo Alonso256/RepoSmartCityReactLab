@@ -101,12 +101,12 @@ export function MapaContenedores() {
   }
 
   return (
-    <ChartContainer title="Mapa de Contenedores por Ubicación">
-      <div className="map-container">
+    <ChartContainer title="Mapa de Contenedores por Ubicación" className="chart-container">
+      <div className="map-container" style={{ height: "100%", width: "100%", position: "relative" }}>
         <MapContainer
           center={center}
           zoom={13}
-          style={{ height: '600px', width: '100%' }}
+          style={{width: '100%', height: '100%'  }}
         >
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -115,9 +115,9 @@ export function MapaContenedores() {
           {contenedores.map((contenedor, index) => {
             // Seleccionar el icono según el total de contenedores en el barrio
             let icon = greenIcon;
-            if (contenedor.total < 5) {
-              icon = redIcon; // Menos de 5 contenedores -> Rojo
-            } else if (contenedor.total >= 5 && contenedor.total <= 10) {
+            if (contenedor.total < 100) {
+              icon = redIcon; // Menos de 100 contenedores -> Rojo
+            } else if (contenedor.total >= 100 && contenedor.total <= 900) {
               icon = yellowIcon; // Entre 5 y 10 contenedores -> Amarillo
             }
 
