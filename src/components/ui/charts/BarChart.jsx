@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { Bar, BarChart as RechartsBarChart, CartesianGrid, XAxis, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { ChartContainer } from './ChartContainer';
 import Loader from '../../../Loader';
+import ButtonFilter from '@/components/ButtonFilter';
 
 const chartConfig = {
   felicidad: {
@@ -15,8 +16,10 @@ const chartConfig = {
 }
 
 export function BarChart() {
-  const [chartData, setChartData] = useState("");
+  const [chartData, setChartData] = useState([]);
   const [loading, setLoading] = useState(true); // Estado de carga
+  const [filter, setFilter] = useState("todos"); // Estado para controlar la vista
+
 
   useEffect(() => {
     setLoading(true); // Comienza la carga
@@ -38,40 +41,54 @@ export function BarChart() {
       });
   }, []);
 
+  // Filtrar los datos según la vista actual
+  const filteredData = useMemo(() => {
+    return chartData.filter((item) => {
+      if (filter === "felices") return item.felicidad > item.tristeza; // Umbral para barrios felices
+      if (filter === "tristes") return item.tristeza > item.felicidad; // Umbral para barrios tristes
+      return true; // Mostrar todos
+    });
+  }, [chartData, filter]);
+
   if (loading) {
     return (
       <div className="loading-container">
-        <Loader/>
+        <Loader />
       </div>
     );
   }
 
   return (
-    <ChartContainer title="Estadísticas por Distrito">
-      <ResponsiveContainer width="100%" height="100%">
-        <RechartsBarChart data={chartData}>
-          <CartesianGrid vertical={false} strokeDasharray="3 3" />
-          <XAxis
-            dataKey="distrito"
-            tickLine={false}
-            tickMargin={10}
-            axisLine={false}
-            tickFormatter={(value) => value.slice(0, 3)}
-          />
-          <Tooltip />
-          <Legend />
-          <Bar 
-          dataKey="felicidad" 
-          fill={chartConfig.felicidad.color} 
-          radius={4} 
-          name={chartConfig.felicidad.label} />
-          <Bar 
-          dataKey="tristeza" 
-          fill={chartConfig.tristeza.color}
-            radius={4}
-            name={chartConfig.tristeza.label} />
-        </RechartsBarChart>
-      </ResponsiveContainer>
-    </ChartContainer>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div className="filter-buttons">
+        <ButtonFilter setFilter={setFilter} />
+      </div>
+      <ChartContainer title="Estadísticas por Distrito">
+        <ResponsiveContainer width="100%" height="100%">
+          <RechartsBarChart data={filteredData}>
+            <CartesianGrid vertical={false} strokeDasharray="3 3" />
+            <XAxis
+              dataKey="distrito"
+              tickLine={false}
+              tickMargin={10}
+              axisLine={false}
+              tickFormatter={(value) => value.slice(0, 3)}
+            />
+            <Tooltip />
+            <Legend />
+            <Bar
+              dataKey="felicidad"
+              fill={chartConfig.felicidad.color}
+              radius={4}
+              name={chartConfig.felicidad.label} />
+            <Bar
+              dataKey="tristeza"
+              fill={chartConfig.tristeza.color}
+              radius={4}
+              name={chartConfig.tristeza.label} />
+          </RechartsBarChart>
+        </ResponsiveContainer>
+      </ChartContainer>
+    </div>
   );
 }
