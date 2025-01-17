@@ -11,6 +11,7 @@ import { AreaChart } from './components/ui/charts/AreaChart';
 import { Layout } from './app/Layout';
 import { MapaContenedores } from './components/ui/charts/MapaContenedores';
 import { DispersionEstres } from './components/ui/charts/DispersionEstres';
+import { DispersionAnsiedad } from './components/ui/charts/DispersionAnsiedad';
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
           <BarChart />
           </CardBolt>
           <CardBolt>
-            
+            <DispersionAnsiedad />
           </CardBolt>
           <CardBolt>
             
