@@ -11,7 +11,6 @@ import { AreaChart } from './components/ui/charts/AreaChart';
 import { Layout } from './app/Layout';
 import { MapaContenedores } from './components/ui/charts/MapaContenedores';
 import { DispersionEstres } from './components/ui/charts/DispersionEstres';
-import { DispersionAnsiedad } from './components/ui/charts/DispersionAnsiedad';
 import { LineChart } from './components/ui/charts/LineChart';
 import { HoverCard, HoverCardContent, HoverCardTrigger,} from "@/components/ui/hover-card"
 
@@ -19,8 +18,14 @@ function App() {
 
   return (
     <>
+    <div className="container mx-auto p-4">
+      <div className="flex items-center justify-center">
+       <h2>MINDFULNESS</h2> 
+      </div>
+    </div>
       <Layout>
         <div className="min-h-screen bg-gray-100 p-4 sm:p-6 lg:p-8">
+     
           <ChartGridBolt>
             <ChartRowBolt columns={2}>
               <CardBolt>
@@ -41,13 +46,11 @@ function App() {
               </CardBolt>
             </ChartRowBolt>
 
-            <ChartRowBolt columns={3}>
+            <ChartRowBolt columns={2}>
               <CardBolt>
                 <BarChart />
               </CardBolt>
-              <CardBolt>
-<DispersionAnsiedad />
-              </CardBolt>
+              
               <CardBolt>
                 <LineChart />
               </CardBolt>

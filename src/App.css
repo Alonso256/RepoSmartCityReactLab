@@ -27,14 +27,6 @@
   max-width: calc(50% - 1rem);
 }
 
-/* Asegurarnos que solo haya 2 columnas en la primera fila y 3 en la segunda */
-.row:first-child .col {
-  flex-basis: calc(33.33% - 20px); /* Tres columnas ocupan un tercio del ancho */
-}
-
-.row:nth-child(2) .col {
-  flex-basis: calc(50% - 20px); /* Dos columnas ocupan la mitad del ancho */
-}
 
 
 

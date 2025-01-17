@@ -26,7 +26,6 @@ export function BarChart() {
     fetch("http://localhost:5000/felicidad_tristeza")
       .then((response) => response.json())
       .then((data) => {
-        // Formatear el objeto directamente
         const formattedData = data.map((item) => ({
           distrito: item.barrio,
           felicidad: item.felicidad,
