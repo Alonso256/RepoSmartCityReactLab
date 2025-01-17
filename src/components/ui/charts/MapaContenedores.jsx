@@ -96,7 +96,7 @@ export function MapaContenedores() {
   });
 
   return (
-    <ChartContainer title="Mapa de Contenedores por Ubicación" className="chart-container">
+    <ChartContainer title="ASCO 🤮" className="chart-container">
       <SwitchContainer>
         <Switch
           onChange={(checked) => setShowHighDensity(checked)}
@@ -126,7 +126,7 @@ export function MapaContenedores() {
                   icon={icon}
                 >
                   <Popup>
-                    <div className="popup-content">
+                    <div className="popup-content" style={{ textAlign: 'center' }}>
                       <h3>Detalles del Contenedor</h3>
                       <p><strong>Distrito:</strong> {contenedor.Distrito || "N/A"}</p>
                       <p><strong>Dirección:</strong> {contenedor.DIRECCION || "N/A"}</p>
