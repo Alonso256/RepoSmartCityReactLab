@@ -2,7 +2,9 @@ import * as React from 'react';
 import { ScatterChart } from '@mui/x-charts/ScatterChart';
 import { axisClasses } from '@mui/x-charts/ChartsAxis';
 import { useState, useEffect } from 'react';
-
+import {
+  ResponsiveContainer,
+} from "recharts";
 
 
 const chartSetting = {
@@ -67,6 +69,8 @@ export function DispersionEstres() {
     filter: (point) => point.distrito === distrito, // Mostrar solo los puntos del distrito correspondiente
   }));
   return (
+    <ResponsiveContainer width="100%" height={400}>
+            <div><strong>ESTRÉS Y FRUSTRACIÓN 👺</strong></div>
     <ScatterChart
       dataset={dataset}
       series={series}
@@ -83,6 +87,7 @@ export function DispersionEstres() {
       width={500}
       height={300}
     />
+    </ResponsiveContainer>
   );
 }
 

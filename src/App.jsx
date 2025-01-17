@@ -7,7 +7,6 @@ import { CardBolt } from './CardBolt';
 import { ChartGridBolt } from './ChartGridBolt';
 import { ChartRowBolt } from './ChartRowBolt';
 import { BarChart } from './components/ui/charts/BarChart';
-import { AreaChart } from './components/ui/charts/AreaChart';
 import { Layout } from './app/Layout';
 import { MapaContenedores } from './components/ui/charts/MapaContenedores';
 import { DispersionEstres } from './components/ui/charts/DispersionEstres';
@@ -20,7 +19,7 @@ function App() {
     <>
     <div className="container mx-auto p-4">
       <div className="flex items-center justify-center">
-       <h2>MINDFULNESS</h2> 
+       <h1>MINDFULNESS</h1> 
       </div>
     </div>
       <Layout>

@@ -62,7 +62,7 @@ export function BarChart() {
       <div className="filter-buttons">
         <ButtonFilter setFilter={setFilter} />
       </div>
-      <ChartContainer title="Estadísticas por Distrito">
+      <ChartContainer title="FELICIDAD / TRISTEZA 🌈😢">
         <ResponsiveContainer width="100%" height="100%">
           <RechartsBarChart data={filteredData}>
             <CartesianGrid vertical={false} strokeDasharray="3 3" />
