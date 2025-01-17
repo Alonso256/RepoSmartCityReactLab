@@ -10,6 +10,7 @@ import { BarChart } from './components/ui/charts/BarChart';
 import { AreaChart } from './components/ui/charts/AreaChart';
 import { Layout } from './app/Layout';
 import { MapaContenedores } from './components/ui/charts/MapaContenedores';
+import { DispersionEstres } from './components/ui/charts/DispersionEstres';
 
 function App() {
 
@@ -20,7 +21,7 @@ function App() {
       <ChartGridBolt>
         <ChartRowBolt columns={3}>
           <CardBolt>
-          
+          <BarChart />
           </CardBolt>
           <CardBolt>
             
@@ -35,7 +36,7 @@ function App() {
             <MapaContenedores />
           </CardBolt>
           <CardBolt>
-          <BarChart />
+          <DispersionEstres />
           </CardBolt>
         </ChartRowBolt>
       </ChartGridBolt>
